@@ -1,0 +1,16 @@
+bin/
+gen/
+target/
+build/
+derivedDataPath/
+.gradle/
+.DS_Store
+.classpath
+.project
+.settings/
+*.swp
+.idea/
+Pods/
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
