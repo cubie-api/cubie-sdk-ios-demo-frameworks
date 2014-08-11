@@ -1,14 +1,14 @@
 #import "SendMessageViewController.h"
-#import "CBSession.h"
-#import "CBService.h"
-#import "CBUser.h"
-#import "UIImageView+AFNetworking.h"
+#import <CubieSDK/CBSession.h>
+#import <CubieSDK/CBService.h>
+#import <CubieSDK/CBUser.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "Views.h"
-#import "CBMessageBuilder.h"
-#import "CBMessageActionParams.h"
+#import <CubieSDK/CBMessageBuilder.h>
+#import <CubieSDK/CBMessageActionParams.h>
 #import "SelectFriendViewController.h"
-#import "CBFriend.h"
-#import "CBMessage.h"
+#import <CubieSDK/CBFriend.h>
+#import <CubieSDK/CBMessage.h>
 #import "ShopViewController.h"
 #import <CocoaLumberjack/DDLog.h>
 

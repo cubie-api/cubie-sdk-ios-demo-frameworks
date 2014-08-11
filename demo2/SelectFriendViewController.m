@@ -1,9 +1,9 @@
 #import "SelectFriendViewController.h"
-#import "CBFriendList.h"
-#import "CBService.h"
-#import "CBSession.h"
-#import "CBFriend.h"
-#import "UIImageView+AFNetworking.h"
+#import <CubieSDK/CBFriendList.h>
+#import <CubieSDK/CBService.h>
+#import <CubieSDK/CBSession.h>
+#import <CubieSDK/CBFriend.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "Views.h"
 #import <CocoaLumberjack/DDLog.h>
 

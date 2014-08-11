@@ -1,10 +1,10 @@
 #import "AppDelegate.h"
 #import "DemoMainViewController.h"
-#import "DDLog.h"
-#import "DDASLLogger.h"
-#import "DDTTYLogger.h"
-#import "DDFileLogger.h"
-#import "Cubie.h"
+#import <CocoaLumberjack/DDLog.h>
+#import <CocoaLumberjack/DDASLLogger.h>
+#import <CocoaLumberjack/DDTTYLogger.h>
+#import <CocoaLumberjack/DDFileLogger.h>
+#import <CubieSDK/Cubie.h>
 
 @implementation AppDelegate
 

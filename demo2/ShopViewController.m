@@ -1,6 +1,6 @@
 #import "ShopViewController.h"
 #import "Item.h"
-#import "CBService.h"
+#import <CubieSDK/CBService.h>
 
 @interface ShopViewController()<UIAlertViewDelegate>
 @property (nonatomic, strong) NSArray* items;

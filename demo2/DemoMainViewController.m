@@ -1,5 +1,5 @@
 #import "DemoMainViewController.h"
-#import "CBSession.h"
+#import <CubieSDK/CBSession.h>
 #import "SendMessageViewController.h"
 #import <CocoaLumberjack/DDLog.h>
 
