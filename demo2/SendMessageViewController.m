@@ -10,6 +10,7 @@
 #import <CubieSDK/CBFriend.h>
 #import <CubieSDK/CBMessage.h>
 #import "ShopViewController.h"
+#import <CubieSDK/UIViewController+CBSession.h>
 #import <CocoaLumberjack/DDLog.h>
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
@@ -24,6 +25,7 @@ enum
 
 enum
 {
+    INPUT_NOTIFICATION,
     INPUT_TEXT,
     INPUT_IMAGE_URL,
     INPUT_BUTTON_TEXT,
@@ -53,6 +55,7 @@ enum
     {
         _user = nil;
         _labels = @[
+          @"Notification",
           @"Text",
           @"Image",
           @"Button",
@@ -63,6 +66,7 @@ enum
           @"Market Params"
         ];
         _prefilledValues = @[
+          @"Notification",
           @"hello world",
           @"http://placehold.it/384x384",
           @"open app",
@@ -101,11 +105,12 @@ enum
                                                                                style:UIBarButtonItemStylePlain
                                                                               target:self
                                                                               action:@selector(onShop)]];
+}
 
-    if ([CBSession getSession] && [[CBSession getSession] isOpen])
-    {
-        [self loadProfile];
-    }
+- (void) viewDidAppear:(BOOL) animated
+{
+    [super viewDidAppear:animated];
+    [self onCBSessionOpen:@selector(loadProfile) onCBSessionClose:@selector(goBackToMain)];
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView*) tableView
@@ -176,7 +181,7 @@ enum
         [Views resize:textField containerSize:CGSizeMake(cell.contentView.bounds.size.width - 100 - 44 - 5, 34)];
         [Views locate:textField x:110 y:5];
         [cell.contentView addSubview:textField];
-        if (row == INPUT_TEXT)
+        if (row == INPUT_TEXT || row == INPUT_NOTIFICATION)
         {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
             self.checked[row] = [NSNumber numberWithBool:YES];
@@ -228,7 +233,7 @@ enum
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
-    if (indexPath.section != SECTION_INPUTS)
+    if (indexPath.section != SECTION_INPUTS || indexPath.row == INPUT_NOTIFICATION)
     {
         return;
     }
@@ -259,13 +264,7 @@ enum
     // right
     if ([button isEqualToString:@"Logout"])
     {
-        __weak SendMessageViewController* preventCircularRef = self;
-        [[CBSession getSession] close:^(CBSession* session) {
-            if (![session isOpen])
-            {
-                [preventCircularRef goBackToMain];
-            }
-        }];
+        [self disconnect:@selector(goBackToMain)];
     }
     else if ([button isEqualToString:@"Show Access Token"])
     {
@@ -336,7 +335,7 @@ enum
 {
     DDLogVerbose(@"SendMessageViewController loadProfile");
     __weak SendMessageViewController* preventCircularRef = self;
-    [CBService requestProfile:^(CBUser* user, NSError* error) {
+    [CBService requestMe:^(CBUser* user, NSError* error) {
         if (error)
         {
             DDLogVerbose(@"SendMessageViewController error:%@", error);
@@ -388,6 +387,8 @@ enum
         [builder appLink:inputLinkText.text
                   action:[[[CBMessageActionParams params] executeParam:inputLinkExec.text] marketParam:inputLinkMarket.text]];
     }
+    UITextField* inputNotification = self.textFields[INPUT_NOTIFICATION];
+    [builder notification:inputNotification.text];
     CBMessage* message = [builder build];
     return message;
 }

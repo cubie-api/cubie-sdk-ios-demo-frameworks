@@ -24,12 +24,13 @@
 		2896D8DE1987500900A8DCCC /* SelectFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2896D8D81987500900A8DCCC /* SelectFriendViewController.m */; };
 		2896D8DF1987500900A8DCCC /* SendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2896D8DA1987500900A8DCCC /* SendMessageViewController.m */; };
 		2896D8E01987500900A8DCCC /* Views.m in Sources */ = {isa = PBXBuildFile; fileRef = 2896D8DC1987500900A8DCCC /* Views.m */; };
-		2896D8E51987502E00A8DCCC /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E11987502E00A8DCCC /* AFNetworking.framework */; };
-		2896D8E61987502E00A8DCCC /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E21987502E00A8DCCC /* CocoaLumberjack.framework */; };
-		2896D8E71987502E00A8DCCC /* JSONKit-NoWarning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E31987502E00A8DCCC /* JSONKit-NoWarning.framework */; };
-		2896D8E81987502E00A8DCCC /* CubieSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E41987502E00A8DCCC /* CubieSDK.framework */; };
 		2896D8EA1987660100A8DCCC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E91987660100A8DCCC /* MobileCoreServices.framework */; };
 		4A6142371989EA13002F981B /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6142361989EA13002F981B /* ShopViewController.m */; };
+		4AB5953F199CA4DF003FB66E /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E11987502E00A8DCCC /* AFNetworking.framework */; };
+		4AB59540199CA4DF003FB66E /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E21987502E00A8DCCC /* CocoaLumberjack.framework */; };
+		4AB59542199CA4DF003FB66E /* JSONKit-NoWarning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E31987502E00A8DCCC /* JSONKit-NoWarning.framework */; };
+		4AB59547199CAA2D003FB66E /* CubieSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896D8E41987502E00A8DCCC /* CubieSDK.framework */; };
+		4AFC020A199DB4CD0043AF70 /* CBResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4AFC0209199DB4CD0043AF70 /* CBResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,13 +70,14 @@
 		2896D8DA1987500900A8DCCC /* SendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageViewController.m; sourceTree = "<group>"; };
 		2896D8DB1987500900A8DCCC /* Views.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Views.h; sourceTree = "<group>"; };
 		2896D8DC1987500900A8DCCC /* Views.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Views.m; sourceTree = "<group>"; };
-		2896D8E11987502E00A8DCCC /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Frameworks/AFNetworking.framework; sourceTree = "<group>"; };
-		2896D8E21987502E00A8DCCC /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Frameworks/CocoaLumberjack.framework; sourceTree = "<group>"; };
-		2896D8E31987502E00A8DCCC /* JSONKit-NoWarning.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "JSONKit-NoWarning.framework"; path = "Frameworks/JSONKit-NoWarning.framework"; sourceTree = "<group>"; };
-		2896D8E41987502E00A8DCCC /* CubieSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CubieSDK.framework; path = Frameworks/CubieSDK.framework; sourceTree = "<group>"; };
+		2896D8E11987502E00A8DCCC /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../cubie-sdk-ios/Frameworks/AFNetworking.framework"; sourceTree = "<group>"; };
+		2896D8E21987502E00A8DCCC /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = "../cubie-sdk-ios/Frameworks/CocoaLumberjack.framework"; sourceTree = "<group>"; };
+		2896D8E31987502E00A8DCCC /* JSONKit-NoWarning.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "JSONKit-NoWarning.framework"; path = "../cubie-sdk-ios/Frameworks/JSONKit-NoWarning.framework"; sourceTree = "<group>"; };
+		2896D8E41987502E00A8DCCC /* CubieSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CubieSDK.framework; path = "../cubie-sdk-ios/Frameworks/CubieSDK.framework"; sourceTree = "<group>"; };
 		2896D8E91987660100A8DCCC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4A6142351989EA13002F981B /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
 		4A6142361989EA13002F981B /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		4AFC0209199DB4CD0043AF70 /* CBResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CBResources.bundle; path = "../cubie-sdk-ios/CBResources.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +85,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB59547199CAA2D003FB66E /* CubieSDK.framework in Frameworks */,
+				4AB5953F199CA4DF003FB66E /* AFNetworking.framework in Frameworks */,
+				4AB59540199CA4DF003FB66E /* CocoaLumberjack.framework in Frameworks */,
+				4AB59542199CA4DF003FB66E /* JSONKit-NoWarning.framework in Frameworks */,
 				2896D8EA1987660100A8DCCC /* MobileCoreServices.framework in Frameworks */,
-				2896D8E51987502E00A8DCCC /* AFNetworking.framework in Frameworks */,
-				2896D8E61987502E00A8DCCC /* CocoaLumberjack.framework in Frameworks */,
-				2896D8E71987502E00A8DCCC /* JSONKit-NoWarning.framework in Frameworks */,
-				2896D8E81987502E00A8DCCC /* CubieSDK.framework in Frameworks */,
 				2896D8A919874F7200A8DCCC /* CoreGraphics.framework in Frameworks */,
 				2896D8AB19874F7200A8DCCC /* UIKit.framework in Frameworks */,
 				2896D8A719874F7200A8DCCC /* Foundation.framework in Frameworks */,
@@ -110,6 +112,7 @@
 		2896D89A19874F7200A8DCCC = {
 			isa = PBXGroup;
 			children = (
+				4AFC0209199DB4CD0043AF70 /* CBResources.bundle */,
 				2896D8AC19874F7200A8DCCC /* demo2 */,
 				2896D8C519874F7200A8DCCC /* demo2Tests */,
 				2896D8A519874F7200A8DCCC /* Frameworks */,
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2896D8B119874F7200A8DCCC /* InfoPlist.strings in Resources */,
+				4AFC020A199DB4CD0043AF70 /* CBResources.bundle in Resources */,
 				2896D8B919874F7200A8DCCC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +421,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					$SRCROOT/Frameworks,
+					"$SRCROOT/../cubie-sdk-ios/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demo2/demo2-Prefix.pch";
@@ -435,7 +439,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					$SRCROOT/Frameworks,
+					"$SRCROOT/../cubie-sdk-ios/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "demo2/demo2-Prefix.pch";

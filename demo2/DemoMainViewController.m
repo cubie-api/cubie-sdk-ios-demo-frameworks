@@ -1,7 +1,8 @@
 #import "DemoMainViewController.h"
-#import <CubieSDK/CBSession.h>
 #import "SendMessageViewController.h"
+#import <CubieSDK/UIViewController+CBSession.h>
 #import <CocoaLumberjack/DDLog.h>
+#import <CubieSDK/Cubie.h>
 
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
@@ -23,34 +24,16 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     self.navigationController.navigationBar.topItem.title = @"Demo";
 
-    UIButton* connectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton* connectButton = [Cubie buttonWithCubieStyle];
     [connectButton addTarget:self action:@selector(openCubie) forControlEvents:UIControlEventTouchUpInside];
-    [connectButton setTitle:@"Open Cubie" forState:UIControlStateNormal];
-    [connectButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [connectButton sizeToFit];
     connectButton.center = self.view.center;
     [self.view addSubview:connectButton];
 }
 
 - (void) viewDidAppear:(BOOL) animated
 {
-    if ([CBSession getSession] && [[CBSession getSession] isOpen])
-    {
-        [self gotoSendMessageView];
-    } else
-    {
-        DDLogVerbose(@"DemoMainViewController CBSession init");
-        __weak DemoMainViewController* preventCircularRef = self;
-        [CBSession init:^(CBSession* session) {
-            if ([session isOpen])
-            {
-                DDLogVerbose(@"DemoMainViewController CBSession init isOpen");
-                [preventCircularRef gotoSendMessageView];
-            } else
-            {
-            }
-        }];
-    }
+    [super viewDidAppear:animated];
+    [self onCBSessionOpen:@selector(gotoSendMessageView) onCBSessionClose:nil];
 }
 
 - (void) gotoSendMessageView
@@ -62,16 +45,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 - (void) openCubie
 {
     DDLogVerbose(@"DemoMainViewController openCubie");
-    __weak DemoMainViewController* preventCircularRef = self;
-    [[CBSession getSession] open:^(CBSession* session) {
-        if ([session isOpen])
-        {
-            DDLogVerbose(@"DemoMainViewController openCubie isOpen");
-            [preventCircularRef gotoSendMessageView];
-        } else
-        {
-        }
-    }];
+    [self connect:@selector(gotoSendMessageView)];
 }
 
 @end

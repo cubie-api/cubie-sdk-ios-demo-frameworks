@@ -1,6 +1,7 @@
 #import "ShopViewController.h"
 #import "Item.h"
 #import <CubieSDK/CBService.h>
+#import <CubieSDK/UIViewController+CBSession.h>
 
 @interface ShopViewController()<UIAlertViewDelegate>
 @property (nonatomic, strong) NSArray* items;
@@ -38,6 +39,17 @@
     return self;
 }
 
+- (void) viewDidAppear:(BOOL) animated
+{
+    [super viewDidAppear:animated];
+    [self onCBSessionOpen:nil onCBSessionClose:@selector(goBackToMain)];
+}
+
+- (void) goBackToMain
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (NSInteger) tableView:(UITableView*) tableView numberOfRowsInSection:(NSInteger) section
 {
     return self.items.count;
@@ -72,20 +84,20 @@
 {
     if (alertView.cancelButtonIndex != buttonIndex)
     {
-        [CBService createTransactionWithPurchaseId:@"234"
-                                          itemName:self.selectedItem.id
-                                          currency:self.selectedItem.currency
-                                             price:self.selectedItem.price
-                                      purchaseDate:[NSDate date]
-                                             extra:nil
-                                              done:^(NSError* error) {
-                                                  if (error)
-                                                  {
-                                                      NSLog(@"createTransaction failure:%@", error);
-                                                      return;
-                                                  }
-                                                  NSLog(@"createTransaction success");
-                                              }];
+        [CBService createTransaction:@"234"
+                            itemName:self.selectedItem.id
+                            currency:self.selectedItem.currency
+                               price:self.selectedItem.price
+                        purchaseDate:[NSDate date]
+                               extra:nil
+                                done:^(NSError* error) {
+                                    if (error)
+                                    {
+                                        NSLog(@"createTransaction failure:%@", error);
+                                        return;
+                                    }
+                                    NSLog(@"createTransaction success");
+                                }];
     }
 }
 
